@@ -10,8 +10,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Comic Neue', cursive;
-  background: url('https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif') repeat; /* animierter GIF-Hintergrund */
-  height: 100vh;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -19,6 +17,16 @@ body {
   justify-content: center;
   text-align: center;
   overflow: hidden;
+}
+
+#bg-gif {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 h1 {
@@ -36,7 +44,7 @@ h1 {
 
 #message {
   position: relative;
-  background: url('https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif') repeat; /* GIF für Box */
+  background: url('https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif') repeat;
   border: 3px dashed #ff00ff;
   border-radius: 12px;
   padding: 20px;
@@ -102,6 +110,9 @@ button:hover {
 </style>
 </head>
 <body>
+
+<!-- GIF-Hintergrund -->
+<img id="bg-gif" src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="background GIF">
 
 <h1>u still think i hate u <3</h1>
 <div>
