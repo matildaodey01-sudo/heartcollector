@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>heart collector game <3</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #ffe6f0;
+        text-align: center;
+        padding: 50px 20px;
+        overflow: hidden;
+        position: relative;
+        height: 100vh;
+    }
+    h1 {
+        font-size: 2rem;
+        color: #d26cc2;
+        position: relative;
+        z-index: 2;
+    }
+    button {
+        padding: 15px 30px;
+        margin: 20px;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+    }
+    #yesBtn { background-color: #ff4d4d; color: white; }
+    #noBtn { background-color: #4dff4d; color: white; }
+    #message {
+        margin-top: 30px;
+        font-size: 1.2rem;
+        color: #333;
+        min-height: 60px;
+        position: relative;
+        z-index: 2;
+    }
+    .heart {
+        position: absolute;
+        font-size: 24px;
+        color: #d26cc2;
+        animation: fall 2s linear forwards;
+        user-select: none;
+        pointer-events: none;
+    }
+    @keyframes fall {
+        0% { transform: translateY(0) scale(1); opacity: 1; }
+        50% { transform: translateY(50vh) scale(1.3); opacity: 1; }
+        100% { transform: translateY(100vh) scale(1); opacity: 0; }
+    }
+</style>
+</head>
+<body>
+
+<h1>u still think i hate u <3</h1>
+<button id="yesBtn">yes</button>
+<button id="noBtn">no</button>
+
+<div id="message"></div>
+
+<script>
+const compliments = [
+"soufi you understand people in a way few can <3",
+"you always see the best in others <3",
+"your words touch the soul <3",
+"you are honest with yourself and that makes you strong <3",
+"your laughter can brighten any day <3",
+"your creativity inspires those around you <3",
+"you have a rare ability to calm people <3",
+"your lyrics show deep understanding of emotions <3",
+"you see the world in a unique way <3",
+"you make people feel truly seen <3",
+"your heart is bigger than many will ever understand <3",
+"you are brave and at the same time empathetic <3",
+"your authenticity is admirable <3",
+"you bring light to the darkest moments <3",
+"your presence makes life feel richer <3",
+"you have a rare combination of sensitivity and strength <3",
+"your insight can guide others without even trying <3",
+"you inspire trust just by being yourself <3",
+"your perspective makes people think in new ways <3",
+"you have a way of making everyone feel important <3",
+"your dedication to what you love is inspiring <3",
+"you are thoughtful in ways people rarely notice <3",
+"your empathy is a gift to everyone around you <3",
+"you create beauty with your words and actions <3",
+"your presence alone can lift the mood in a room <3",
+"you have an ability to see truth where others miss it <3",
+"your mind and heart are both rare treasures <3",
+"you make people feel safe to be themselves <3",
+"your passion is contagious <3",
+"you leave a mark on people’s hearts without even trying <3"
+]
+
+const message = document.getElementById('message')
+const yesBtn = document.getElementById('yesBtn')
+const noBtn = document.getElementById('noBtn')
+
+function showCompliment() {
+    const compliment = compliments[Math.floor(Math.random() * compliments.length)]
+    message.innerText = compliment
+}
+
+function createHeart() {
+    const heart = document.createElement('div')
+    heart.className = 'heart'
+    heart.innerText = '<3'
+    heart.style.left = Math.random() * (window.innerWidth - 30) + 'px'
+    heart.style.fontSize = (16 + Math.random()*20) + 'px'
+    document.body.appendChild(heart)
+    setTimeout(() => { heart.remove() }, 2000)
+}
+
+yesBtn.addEventListener('click', () => {
+    showCompliment()
+    createHeart()
+})
+
+noBtn.addEventListener('click', () => {
+    showCompliment()
+    createHeart()
+})
+</script>
+
+</body>
+</html>
